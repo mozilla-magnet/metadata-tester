@@ -102,7 +102,17 @@
 	      typeEl.innerText = data.type;
 	      const value = JSON.stringify(data, null, 2);
 	      fullDataEl.value = value;
+
+	      const longestLineLength = value.split('\n').reduce((longest, current) => {
+	        if (longest < current.length) {
+	          return current.length;
+	        } else {
+	          return longest;
+	        }
+	      }, 0);
+
 	      fullDataEl.rows = value.split('\n').length;
+	      fullDataEl.cols = longestLineLength;
 	    });
 
 	  }
