@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Magnet Metadata Testing!</title>
+  <style>
+    #full-data { height: 100%; width:100%; resize: none; margin: 2px; }
+    td { border: 1px solid; }
+    textarea { border: 0; }
+    img {
+      max-width: 400px;
+      max-height: 500px;
+    }
+	#spinner {
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      background-color: #fff;
+      top: 30px;
+      left:0;
+    }
+    #spinner img {
+      margin: 50px;
+    }
+    .hidden {
+      visibility: hidden;
+    }
+    .hidden-faded {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s 0.5s, opacity 0.5s linear;
+    }
+  </style>
+</head>
+<body>
+  <form id="url-form" action="">
+    <input id="url-input" type="text" />
+    <input type="submit" value="Test URL!"/>
+  </form>
+
+  <div class="hidden" id="spinner">
+    <!-- \o/ loading.io is cool! -->
+    <img src="spinner.svg" />
+  </div>
+
+  <div  id="output">
+    <table cellspacing="0">
+    <tr>
+      <td>Title</td>
+    <td>
+      <p id="title"></p>
+    </td>
+    </tr>
+    <tr>
+      <td>Description</td>
+    <td>
+      <p id="description"></p>
+    </td>
+    </tr>
+    <tr>
+      <td>Icon</td>
+    <td>
+      <img id="icon" src="" />
+    </td>
+    </tr>
+    <tr>
+      <td>Main Image</td>
+    <td>
+      <img id="image" src="" />
+    </td>
+    </tr>
+    <tr>
+      <td>Keywords</td>
+    <td>
+      <p id="keywords"></p>
+    </td>
+    </tr>
+     <tr>
+      <td>Site Name</td>
+    <td>
+      <p id="siteName"></p>
+    </td>
+    </tr>
+    <tr>
+      <td>Page Type</td>
+    <td>
+       <p id="type"></p>
+    </td>
+    </tr>
+    <tr>
+      <td>Full Metadata</td>
+    <td>
+       <textarea readonly id="full-data"></textarea>
+    </td>
+    </tr>
+    </table>
+  </div>
+  <script src="bundle.js"></script>
+</body>
+</html>
